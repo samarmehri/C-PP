@@ -1,0 +1,2 @@
+L'executable appelé est nommé "cartesian_vector_param_2" au lieu de "main", il faudrait changer le nom au niveau du cmake.
+A part ça, tous les tests passent et renvoient le bon résultat!
