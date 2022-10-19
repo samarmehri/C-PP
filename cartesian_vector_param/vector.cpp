@@ -1,20 +1,20 @@
-#include "vector.hh"
+#include "vector.h"
 
 const int& Vector::operator[](size_t x) const{
     if(x == 0)
-        return vect[x];
-    else 
-        return vect[y];
+        return vect[0];
+    else
+        return vect[1];
 }
 
 int& Vector::operator[](size_t x){
     if(x == 0)
-        return vect[x];
-    else 
-        return vect[y];
+        return vect[0];
+    else
+        return vect[1];
 }
 
-Vector& operator+=(const Vector& rhs){
+Vector& Vector::operator+=(const Vector& rhs){
     for (int i = 0; i < NDIM; i++) {
         vect[i] += rhs[i];
     }
@@ -22,14 +22,14 @@ Vector& operator+=(const Vector& rhs){
 }
 
 //add value
-Vector& operator+=(int value){
+Vector& Vector::operator+=(int value){
     for (int i = 0; i < NDIM; i++) {
         vect[i] += value;
     }
     return *this;
 }
 
-Vector& operator-=(const Vector& rhs){
+Vector& Vector::operator-=(const Vector& rhs){
     for (int i = 0; i < NDIM; i++) {
         vect[i] -= rhs[i];
     }
@@ -74,6 +74,14 @@ Vector operator-(const Vector &other, const Vector& rhs){
     return v;
 }
 
+value operator*(const Vector &other, const Vector& rhs){
+    value res = 0;
+    for (int i = 0; i < NDIM; i++) {
+        res += other[i] * rhs[i];
+    }
+    return res;
+}
+
 Vector operator*(const Vector &other, int value){
     Vector v = Vector();
     for (int i = 0; i < NDIM; i++) {
@@ -91,5 +99,5 @@ Vector operator*(int value, const Vector& rhs){
 }
 
 std::ostream& operator<<(std::ostream& os, const Vector& rhs){
-  return os << '{' << rhs.getX() << ',' << rhs.getY() << '}';
+  return os << '{' << rhs[0] << ',' << rhs[1] << '}';
 }
