@@ -1,0 +1,8 @@
+Bonjour, 
+
+Concernant le is prime, cela aurait été bien de rajouter des "break" dans les boucles while pour que le programme se termine quand les résultats sont donnés car le programme continue de tourner. Sinon aucun soucis.
+
+
+Pour le find_motive certaines fonctions auraient pu être réduites, sinon tout est nickel. 
+
+
